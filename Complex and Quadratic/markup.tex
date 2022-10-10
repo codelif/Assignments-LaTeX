@@ -1,0 +1,169 @@
+\documentclass[12pt,a4paper]{exam}
+    \usepackage{amsmath,amsthm,amsfonts,amssymb,dsfont}
+    % \usepackage{tabular}
+   
+    \newcounter{matchleft}
+    \newcounter{matchright}
+
+    \newenvironment{matchtabular}{%
+        \setcounter{matchleft}{0}%
+        \setcounter{matchright}{0}%
+        \tabularx{\textwidth}{%
+            >{\leavevmode\hbox to 1.5em{\stepcounter{matchleft}\arabic{matchleft}.}}X%
+            >{\leavevmode\hbox to 1.5em{\stepcounter{matchright}\alph{matchright})}}X%
+            }%
+    }
+
+    \setlength\parindent{0pt}
+        %usage \choice{ }{ }{ }{ }
+        %(A)(B)(C)(D)
+        \newcommand{\fourch}[4]{
+        \par
+                \begin{tabular}{*{4}{@{}p{0.23\textwidth}}}
+                (1)~#1 & (2)~#2 & (3)~#3 & (4)~#4
+                \end{tabular}
+        }
+
+        %(A)(B)
+        %(C)(D)
+        \newcommand{\twoch}[4]{
+
+                \begin{tabular}{*{2}{@{}p{0.46\textwidth}}}
+                (1)~#1 & (2)~#2
+                \end{tabular}
+        \par
+                \begin{tabular}{*{2}{@{}p{0.46\textwidth}}}
+                (3)~#3 & (4)~#4
+                \end{tabular}
+        }
+
+        %(A)
+        %(B)
+        %(C)
+        %(D)
+        \newcommand{\onech}[4]{
+          \begin{tabular}{*{1}{@{}p{0.46\textwidth}}}
+          (1)~#1 &
+          \end{tabular}
+          \begin{tabular}{*{1}{@{}p{0.46\textwidth}}}
+          (2)~#2 &
+          \end{tabular}
+          \begin{tabular}{*{1}{@{}p{0.46\textwidth}}}
+          (3)~#3 &
+          \end{tabular}
+          \begin{tabular}{*{1}{@{}p{0.46\textwidth}}}
+          (4)~#4 &
+          \end{tabular}
+        }
+
+        \newlength\widthcha
+        \newlength\widthchb
+        \newlength\widthchc
+        \newlength\widthchd
+        \newlength\widthch
+        \newlength\tabmaxwidth
+
+        \setlength\tabmaxwidth{0.96\textwidth}
+        \newlength\fourthtabwidth
+        \setlength\fourthtabwidth{0.25\textwidth}
+        \newlength\halftabwidth
+        \setlength\halftabwidth{0.5\textwidth}
+
+      \newcommand{\choice}[4]{%
+      \settowidth\widthcha{AM.#1}\setlength{\widthch}{\widthcha}%
+      \settowidth\widthchb{BM.#2}%
+      \ifdim\widthch<\widthchb\relax\setlength{\widthch}{\widthchb}\fi%
+      \settowidth\widthchb{CM.#3}%
+      \ifdim\widthch<\widthchb\relax\setlength{\widthch}{\widthchb}\fi%
+      \settowidth\widthchb{DM.#4}%
+      \ifdim\widthch<\widthchb\relax\setlength{\widthch}{\widthchb}\fi%
+      \ifdim\widthch<\fourthtabwidth
+        \fourch{#1}{#2}{#3}{#4}
+      \else\ifdim\widthch<\halftabwidth
+        \ifdim\widthch>\fourthtabwidth
+          \twoch{#1}{#2}{#3}{#4}
+        \else
+          \onech{#1}{#2}{#3}{#4}
+        \fi
+      \fi\fi
+    }
+                
+    
+    \title{\vspace{-4em}Complex \& Quadratic Assignment}
+    \date{\vspace{-3em}}
+    \everymath{\displaystyle}
+    \begin{document}
+    \maketitle
+      \begin{questions}
+
+        \question{If the quadratic expression $px^2+ |2p-3|x-6$ is positive for exactly two integral values of $x$ then (where $[\cdot]$ is greatest integer function)}
+        \choice{$[p]=-1$}{$[p]=-2$}{$p=\left(-\frac{3}{4},-\frac{3}{5}\right]$}{$p\in(-2,-1]$}
+      
+        \question{If $lx^{17}+mx^{16}+1$ is divisible by $x^2-x-1$ then}
+        \choice{$l$ is divisible by 3}{$l$ is divisible by 7}{$l$ is divisible by 47}{$l$ is divisible by 21}
+        
+        \vspace{5mm}
+        {Let $\alpha$, $\beta$, $\gamma$, $\delta$ be the roots of $x^4+ax^3+bx^2+cx+d=0$ if $(\alpha + \beta) = (\gamma + \delta)$ and $a$, $b$, $c$, $d$ $\in R$, then answer Q.3 \& 4}
+
+        \question{The correct options is/are}
+        \choice{If $a=2$, then $b-c \not=2$}{If $a=2$, then $b-c =2$}{If $a=1$, then $b-2c \not=1$}{If $a=1$, then $b-2c =\frac{1}{4}$}
+        \question{If $b+c=1$ and $a \not= -2$ then}
+        \choice{$b \leq \frac{3}{4}$}{$b \geq \frac{3}{4}$}{$c \leq \frac{1}{4}$}{$c \geq \frac{1}{4}$}
+        
+        \vspace{3mm}
+        \hrule
+        \vspace{3mm}
+        \item[\textbf{Question:}]{For any complex number $z$, $z = |z|\left[\cos(\arg(z))+\dot{\imath}\sin(\arg(z))\right]$. Choose the correct answer(s)}
+        \question{If $z$ is any non-zero complex number, then}
+        \choice{$\left|\frac{z}{|z|}-1\right| \leq \left|\arg(z)\right|$}{$\left|\frac{z}{|z|}-1\right| > \left|\arg(z)\right|$}{$|z-1|>||z|-1|+|z||\arg(z)|$}{$|z-1|\leq||z|-1|+|z||\arg(z)|$}
+
+        \question{If $z$ is any non-zero complex number such that $\arg\left(z^{\frac{3}{8}}\right) = \frac{1}{2}\arg\left(z^2+\overline{z}z^\frac{1}{2}\right)$, then $z$}
+        \begin{flushleft}
+          {(1) Must be purely imaginary and non-unimodular complex number}\vspace{1mm}\break
+          \vspace{1mm}{(2) Could be unimodular complex number}\break
+          \vspace{1mm}{(3) Could be purely read complex number}\break
+          \vspace{1mm}{(4) Must be purely imaginary complex number}
+    
+        \end{flushleft}
+        \hrule
+        \vspace{20mm}
+        \vspace{3mm}
+        \item[\textbf{Question:}] {Let $ e^{\ln[1+ \left\{xyz\right\}]}$, $\log_yx$, $\log_zy$ and $\log_xz^{-15}$ be the first four terms of an A.P. with common difference $d$, where all terms of the A.P. are read and defined (where $\left[\cdot\right]$ and $\left\{\cdot\right\}$ represents greatest integer function and fractional part function) then answer the following questions}
+        
+        \question{Which of the following interval(s) contain $d$?}
+        \choice{$[0, \infty)$}{$(-\infty,0]$}{$[-10,20]$}{$[10,20]$}
+
+        \question{The value of $\sum_{k=1}^\infty \frac{k}{\left(\frac{x}{z^3}+xy+yz^3\right)^k}$ is less than or equal to}
+        \choice{1}{2}{$\frac{1}{2}$}{$\frac{2}{3}$}
+        
+        \vspace{3mm}
+        \begin{flushleft}
+        
+        \hrule
+          \item[\textbf{Question:}]{$\alpha$, $\beta$, $\gamma$ are the roots of a cubic equation $ax^3+bx^2+cx+d=0$ then $\alpha+\beta+\gamma=-\frac{b}{a}$, $\alpha\beta+\beta\gamma+\gamma\alpha=\frac{c}{a}$, $\alpha\beta\gamma=-\frac{d}{a}$.}\break
+        {Let the number $p$ and $q$ are positive and the roots of the equation $x^3-4px+3q=0$ are real. Let $\alpha$ is a root of this given cubic equation of minimum absolute value then}
+        \end{flushleft}
+        
+
+        \question{The roots of the given cubic equation must be}
+        \choice{Two positive and one negative}{All positive}{All negative}{Two negative and one positive}
+
+        \question{The range of $\alpha$ is}
+        \choice{$-\frac{3q}{4p}<\alpha<\frac{q}{2p}$\hspace{5mm}} % Redundant space to force 2x2 answer grid
+        {$-\frac{9q}{8p}<\alpha<\frac{3q}{4p}$}
+        {$\frac{3q}{4p}<\alpha<\frac{9q}{8p}$}
+        {$\frac{q}{p}<\alpha<\frac{9q}{8p}$}
+        \vspace{3mm}
+        \hrule
+        \vspace{3mm}
+        \item[\textbf{Question:}]{If $x_1$, $x_2$, $x_3 \dots x_n$ are all positive and $m\in R$, then $$\frac{x_1^m+x_2^m+x_3^m+\dots+x_n^m}{n} \geq \left(\frac{x_1+x_2+x_3+\dots+x_n}{n}\right)^m .$$ If $m\in R-(0,1)$ and $$\frac{x_1^m+x_2^m+x_3^m+\dots+x_n^m}{n} \leq \left(\frac{x_1+x_2+x_3+\dots+x_n}{n}\right)^m \text{if } 0<m<1$$ also, $\frac{x_1+x_2+x_3+\dots +x_n}{n} \geq \left( x_1\cdot x_2\cdot x_3\cdots x_n \right)^\frac{1}{n} \geq \frac{n}{\frac{1}{x_1}+\frac{1}{x_2}+\frac{1}{x_3}+\dots+\frac{1}{x_n}}$. Then answer the following questions.}
+        \vspace{15mm}
+        \question{If $x_1>0$, $x_2>0$, $x_3>0$ and $x_1 +x_2 +x_3 = 1$. then the minimum value of $$\frac{x_1}{3-x_1}+\frac{x_2}{3-x_2}+\frac{x_3}{3-x_3}\text{ is}$$}
+        \choice{$\frac{3}{8}$}{$\frac{5}{8}$}{$\frac{7}{8}$}{$\frac{3}{4}$}
+
+      \end{questions}
+\end{document}
+
+    % \end{document}
+
+   
