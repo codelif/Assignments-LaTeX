@@ -1,0 +1,189 @@
+\documentclass[12pt,a4paper]{exam}
+    \usepackage{amsmath,amsthm,amsfonts,amssymb,dsfont}
+    % \usepackage{tabular}
+   
+    \newcounter{matchleft}
+    \newcounter{matchright}
+
+    \newenvironment{matchtabular}{%
+        \setcounter{matchleft}{0}%
+        \setcounter{matchright}{0}%
+        \tabularx{\textwidth}{%
+            >{\leavevmode\hbox to 1.5em{\stepcounter{matchleft}\arabic{matchleft}.}}X%
+            >{\leavevmode\hbox to 1.5em{\stepcounter{matchright}\alph{matchright})}}X%
+            }%
+    }
+
+    \setlength\parindent{0pt}
+        %usage \choice{ }{ }{ }{ }
+        %(A)(B)(C)(D)
+        \newcommand{\fourch}[4]{
+        \par
+                \begin{tabular}{*{4}{@{}p{0.23\textwidth}}}
+                (1)~#1 & (2)~#2 & (3)~#3 & (4)~#4
+                \end{tabular}
+        }
+
+        %(A)(B)
+        %(C)(D)
+        \newcommand{\twoch}[4]{
+
+                \begin{tabular}{*{2}{@{}p{0.46\textwidth}}}
+                (1)~#1 & (2)~#2
+                \end{tabular}
+        \par
+                \begin{tabular}{*{2}{@{}p{0.46\textwidth}}}
+                (3)~#3 & (4)~#4
+                \end{tabular}
+        }
+
+        %(A)
+        %(B)
+        %(C)
+        %(D)
+        \newcommand{\onech}[4]{
+          \begin{tabular}{*{1}{@{}p{0.46\textwidth}}}
+          (1)~#1 &
+          \end{tabular}
+          \begin{tabular}{*{1}{@{}p{0.46\textwidth}}}
+          (2)~#2 &
+          \end{tabular}
+          \begin{tabular}{*{1}{@{}p{0.46\textwidth}}}
+          (3)~#3 &
+          \end{tabular}
+          \begin{tabular}{*{1}{@{}p{0.46\textwidth}}}
+          (4)~#4 &
+          \end{tabular}
+        }
+
+        \newlength\widthcha
+        \newlength\widthchb
+        \newlength\widthchc
+        \newlength\widthchd
+        \newlength\widthch
+        \newlength\tabmaxwidth
+
+        \setlength\tabmaxwidth{0.96\textwidth}
+        \newlength\fourthtabwidth
+        \setlength\fourthtabwidth{0.25\textwidth}
+        \newlength\halftabwidth
+        \setlength\halftabwidth{0.5\textwidth}
+
+      \newcommand{\choice}[4]{%
+      \settowidth\widthcha{AM.#1}\setlength{\widthch}{\widthcha}%
+      \settowidth\widthchb{BM.#2}%
+      \ifdim\widthch<\widthchb\relax\setlength{\widthch}{\widthchb}\fi%
+      \settowidth\widthchb{CM.#3}%
+      \ifdim\widthch<\widthchb\relax\setlength{\widthch}{\widthchb}\fi%
+      \settowidth\widthchb{DM.#4}%
+      \ifdim\widthch<\widthchb\relax\setlength{\widthch}{\widthchb}\fi%
+      \ifdim\widthch<\fourthtabwidth
+        \fourch{#1}{#2}{#3}{#4}
+      \else\ifdim\widthch<\halftabwidth
+        \ifdim\widthch>\fourthtabwidth
+          \twoch{#1}{#2}{#3}{#4}
+        \else
+          \onech{#1}{#2}{#3}{#4}
+        \fi
+      \fi\fi
+    }
+                
+    
+    \title{\vspace{-4em}AIATS Functions Assignment}
+    \date{\vspace{-3em}}
+    \everymath{\displaystyle}
+    \begin{document}
+    \maketitle
+      \begin{questions}
+
+        \question{Range of the function $f(x)=\log_2(2-\log_{\sqrt{2}}(16\sin^2x+1))$ is:}
+        \choice{$\left[0,1\right]$}{$\left(-\infty,1\right]$}{$\left[-1,1\right]$}{$\left(-\infty,\infty\right)$}
+
+        \question{Let $A$ be the greatest value of the function $f(x)=\log_x[x] $, (where [$\cdot$] denotes greatest integer function) and $B$ be the least value of the function $g(x)=|\sin x|+|\cos x|$, then:}
+        \choice{$A > B$}{$A < B$}{$A = B$}{$2A + B=4$}
+
+        \question{Solution of the inequation $\{x\}(\{x\}-1)(\{x\}+2)\geq 0$ (where $\{\cdot\}$ denotes fractional part function) is:}
+        \choice{$x \in (-2,1)$}{$x \in I$}{$x \in [0,1)$}{$x \in [-2,0)$}
+
+        \question{The range of function $f(x)=[1+\sin x] + \left[2+\sin{\frac{x}{2}}\right]+\left[3+\sin{\frac{x}{3}}\right]+\cdots+\left[n+\sin{\frac{x}{n}}\right]\forall \hspace{1mm} x \in [0,\pi], n \in N$ ([$\cdot$] denotes greatest integer function) is:}
+        \choice{$\left\{\frac{n^2+n-2}{2},\frac{n(n+1)}{2}\right\}$}{$\left\{\frac{n(n+1)}{2}\right\}$}{$\left\{\frac{n(n+1)}{2},\frac{n^2+n+2}{2},\frac{n^2+n+4}{2}\right\}$}{$\left\{\frac{n(n+1)}{2},\frac{n^2+n+2}{2}\right\}$}
+
+        \question{If $f(x)$ and $g(x)$ are two functions such that $f(x)=[x]+[-x]$ and $g(x)=\{x\}\forall \hspace{1mm} x \in R$ and $h(x)=f(g(x))$; then which of the following is incorrect?}
+        \choice{$f(x)$ and $h(x)$ are identical functions}{$f(x) = g(x)$ has no solution}{$f(x)+h(x)>0$ has no solution}{$f(x)-h(x)$ is a periodic function}
+
+        \question{Number of elements in the range set of $f(x)=\left[\frac{x}{15}\right]\left[-\frac{15}{x}\right]\forall \hspace{1mm} x\in (0,90)$; (where $\left[\cdot\right]$ denotes greatest integer function):}
+        \choice{5}{6}{7}{Infinite}
+
+        \question{If $|f(x)+6-x^2|=|f(x)|+|4-x^2|+2$, then $f(x)$ is necessarily non-negative for:}
+        \choice{$x \in \left[-2,2\right]$}{$x \in \left(-\infty,-2\right) \cup \left(2, \infty\right)$}{$x \in \left[-\sqrt{6},\sqrt{6}\right]$}{$x \in \left[-5,-2\right] \cup \left[2,5\right]$}
+
+        \question{The number of solutions of the equation $[y+[y]]=2\cos x$ is: \\
+        (where $y=\frac{1}{3} [\sin x + [\sin x +[\sin x]]]$ and $[\cdot] =$ greatest integer function)
+        }
+        \choice{0}{1}{2}{Infinite}
+
+        \question{$f(x)={x}+ {x+1}+{x+2}+\cdots+{x+99}$, then $\left[f(\sqrt{2})\right]$, (where $\{\cdot\}$ denotes fractional part function and $\left[\cdot\right]$ denotes the greatest integer function) is equal to:}
+        \choice{5050}{4950}{41}{14}
+        
+        \question{Let $f(x)$ be a polynomial of degree 5 with leading coefficient unity such that $f(1)=5$, $f(2)=4$, $f(3)=3$, $f(4)=2$, $f(5)=1$. Then $f(6)$ is equal to:}
+        \choice{0}{24}{120}{720}
+
+        \question{Let $f:A\to B$ be a function such that $f(x)=\sqrt{x-2}+\sqrt{4-x}$ is invertible, then which of the following is not possible?}
+        \choice{$A=[3,4]$}{$A=[2,3]$}{$A=[2,2\sqrt{3}]$}{$A=[2,2\sqrt{2}]$}
+
+        \question{The number of positive integral values of $x$ satisfying $\frac{x}{9}=\frac{x}{11}$ is:}
+        \choice{21}{22}{23}{24}
+
+        \question{The solution set of the equation $[x]^2 +[x+1]-3=0$, where $\left[\cdot\right]$ represents greatest integer function is:}
+        \choice{$[-1,0)\cup[1,2)$}{$[-2,-1)\cup[1,2)$}{$[1,2)$}{$[-3,-2)\cup[2,3)$}
+
+        \question{If complete solution set of $e^{-x} \leq 4-x$ is $[\alpha,\beta]$, then $[\alpha]+[\beta]$ is equal to: \\
+        (where [$\cdot$] denotes greatest integer function)}
+        \choice{0}{2}{1}{4}
+
+        \question{Range of $f(x)=\sqrt{\sin(\log_7(\cos(\sin x)))}$ is:}
+        \choice{$[0,1]$}{$\{0,1\}$}{$\{0\}$}{$[1,7]$}
+
+        {If domain of $y=f(x)$ is $x \in [-3,2]$, then domain of $y=f(|[x]|)$:\\
+        (where [$\cdot$] denotes greatest integer function)}
+        \choice{$[-3,2]$}{$[-2,3)$}{$[-3,3]$}{$[-2,3]$}
+
+        \question{Let $f:R-\left\{\frac{3}{2}\right\} \to R$, $f(x)=\frac{3x+5}{2x-3}$. Let $f_1(x)=f(x),f_n(x)=f(f_{n-1}(x))$ for $n \geq 2$, $n \in N$, then $f_{2008}(x)+f_{2009}(x)=$}
+        \choice{$\frac{2x^2+5}{2x-3}$}{$\frac{x^2+5}{2x-3}$}{$\frac{2x^2-5}{2x-3}$}{$\frac{x^2-5}{2x-3}$}
+
+        \question{Range of the function, $f(x)=\frac{(1+x+x^2)(1+x^4)}{x^3}$, for $x>0$ is:}
+        \choice{$[0,\infty]$}{$[2,\infty]$}{$[4,\infty]$}{$[6,\infty]$}
+
+        \question{If $f(x)= \sin \left\{\log \left(\frac{\sqrt{4-x^2}}{1-x}\right)\right\};x\in R$, then range of $f(x)$ is given by:}
+        \choice{$[-1,1]$}{$0,1$}{$(-1,1)$}{None of these}
+
+        \question{Consider all functions $f:\{1,2,3,4\} \to \{1,2,3,4\}$ which are one-one, onto and satisfy the following property:\\
+        If $f(k)$ is odd then $f(k+1)$ is even, $k=1,2,3$.\\
+        The number of such functions is:}
+        \choice{4}{8}{12}{16}
+
+        \question{Let $f:R\to R$ and $f(x)=\frac{x(x^4+1)(x+1)+x^4+2}{x^2+x+1}$, then $f(x)$ is:}
+        \choice{One-one, into}{Many-one, onto}{One-one, onto}{Many-one, into}
+
+        \question{Let $f(x)$ be defined as: $$f(x)=\begin{cases}
+          |x|& 0\leq x <1 \\
+          |x-1|+|x-2| & 1\leq x <2 \\
+          |x-3| & 2 \leq < 3
+        \end{cases}$$ \\
+        The range of function $g(x)=\sin(7(f(x)))$ is:}
+        \choice{$[0,1]$}{$[-1,0]$}{$\left[-\frac{1}{2}, \frac{1}{2}\right]$}{$[-1,1]$}
+
+        \question{If $[x]^2-7[x]+10<0$ and $4[y]^2-16[y]+7<0$, then $[x+y]$ cannot be ([$\cdot$ denotes greatest integer function]):}
+        \choice{7}{8}{9}{both (b) and (c)}
+        
+        \question{The function $f(x)$ satisfy the equation $f(1-x)+2f(x)=3x \forall \hspace{1mm} x\in R$, then $f(0)=$}
+        \choice{$-2$}{$-1$}{0}{1}
+
+        \question{The number of integral values of $x$ in the domain of function $f$ defined as $f(x)=\sqrt{\ln|\ln|x||}+\sqrt{7|x|-|x|^2-10}$ is:}
+        \choice{5}{6}{7}{8}
+
+      \end{questions}
+\end{document}
+
+
+   
