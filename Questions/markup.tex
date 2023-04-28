@@ -1,0 +1,133 @@
+\documentclass[12pt,a4paper]{exam}
+    \usepackage{amsmath,amsthm,amsfonts,amssymb}
+    % \usepackage{tabular}
+   
+    \newcounter{matchleft}
+    \newcounter{matchright}
+
+    \newenvironment{matchtabular}{%
+        \setcounter{matchleft}{0}%
+        \setcounter{matchright}{0}%
+        \tabularx{\textwidth}{%
+            >{\leavevmode\hbox to 1.5em{\stepcounter{matchleft}\arabic{matchleft}.}}X%
+            >{\leavevmode\hbox to 1.5em{\stepcounter{matchright}\alph{matchright})}}X%
+            }%
+    }
+
+    \setlength\parindent{0pt}
+        %usage \choice{ }{ }{ }{ }
+        %(A)(B)(C)(D)
+        \newcommand{\fourch}[4]{
+        \par
+                \begin{tabular}{*{4}{@{}p{0.23\textwidth}}}
+                (1)~#1 & (2)~#2 & (3)~#3 & (4)~#4
+                \end{tabular}
+        }
+
+        %(A)(B)
+        %(C)(D)
+        \newcommand{\twoch}[4]{
+
+                \begin{tabular}{*{2}{@{}p{0.46\textwidth}}}
+                (1)~#1 & (2)~#2
+                \end{tabular}
+        \par
+                \begin{tabular}{*{2}{@{}p{0.46\textwidth}}}
+                (3)~#3 & (4)~#4
+                \end{tabular}
+        }
+
+        %(A)
+        %(B)
+        %(C)
+        %(D)
+        \newcommand{\onech}[4]{
+          \begin{tabular}{*{1}{@{}p{0.46\textwidth}}}
+          (1)~#1 &
+          \end{tabular}
+          \begin{tabular}{*{1}{@{}p{0.46\textwidth}}}
+          (2)~#2 &
+          \end{tabular}
+          \begin{tabular}{*{1}{@{}p{0.46\textwidth}}}
+          (3)~#3 &
+          \end{tabular}
+          \begin{tabular}{*{1}{@{}p{0.46\textwidth}}}
+          (4)~#4 &
+          \end{tabular}
+        }
+
+        \newlength\widthcha
+        \newlength\widthchb
+        \newlength\widthchc
+        \newlength\widthchd
+        \newlength\widthch
+        \newlength\tabmaxwidth
+
+        \setlength\tabmaxwidth{0.96\textwidth}
+        \newlength\fourthtabwidth
+        \setlength\fourthtabwidth{0.25\textwidth}
+        \newlength\halftabwidth
+        \setlength\halftabwidth{0.5\textwidth}
+
+      \newcommand{\choice}[4]{%
+      \settowidth\widthcha{AM.#1}\setlength{\widthch}{\widthcha}%
+      \settowidth\widthchb{BM.#2}%
+      \ifdim\widthch<\widthchb\relax\setlength{\widthch}{\widthchb}\fi%
+      \settowidth\widthchb{CM.#3}%
+      \ifdim\widthch<\widthchb\relax\setlength{\widthch}{\widthchb}\fi%
+      \settowidth\widthchb{DM.#4}%
+      \ifdim\widthch<\widthchb\relax\setlength{\widthch}{\widthchb}\fi%
+      \ifdim\widthch<\fourthtabwidth
+        \fourch{#1}{#2}{#3}{#4}
+      \else\ifdim\widthch<\halftabwidth
+        \ifdim\widthch>\fourthtabwidth
+          \twoch{#1}{#2}{#3}{#4}
+        \else
+          \onech{#1}{#2}{#3}{#4}
+        \fi
+      \fi\fi
+    }
+                
+    
+    \title{\vspace{-4em}Random Questions}
+    \date{\vspace{-3em}}
+    \everymath{\displaystyle}
+    \begin{document}
+    \maketitle
+      \begin{questions}
+        \question{Let $f(x)$ be defined as: $$f(x)=\begin{cases}
+            x^2\sin\left(\frac{1}{x}\right) &  x \not= 0 \\
+            0 & x = 0
+          \end{cases}$$ \\
+          If the function $ f(x) $ is continuos then $ f^\prime(0) $ is:}
+          \choice{0}{1}{$-1$}{Not defined}
+
+
+        \question{The number of integral roots of the equation $$x^8 -24x^7 -18x^5 + 39x^2 + 1155 = 0$$}
+        \choice{0}{2}{4}{6}
+
+        \question{Let $x_1, x_2, x_3, \dots, x_k $ be the divisors of positive number $n$ (including 1 and $n$). If $x_1 + x_2 + x_3+ \dots + x_k = 2022$, then $\sum^k_{i=1} \left(\frac{1}{x_i} \right)$ is equal to: }
+        \choice{$\frac{2022}{k}$}{$\frac{2022}{n}$}{$\frac{1}{n}$}{$\frac{1}{2022}$}
+
+        
+        \question{Suppose that $f$ satisfies the equation $f(x+y)=f(x)+f(y)+x^2y+xy^2$ $\forall x,y\in R$. Suppose further that $$ \lim_{x \to 0} \frac{f(x)}{x} = 1 $$ Find $f^\prime(x)$}
+
+        \question{Solve for $x$, $$ x^{\ln x} = x\ln x $$}
+
+
+
+        \question{Consider the function $f(x) = a^{a^x} - x$. If the equation $f(x)=0$ has exactly 2 roots. Then range of $a$ is}
+        \choice{$a \in \left(0,1\right)$}{$a \in \left(1, e^{\frac{1}{e}}\right)$}{ $a \in \left(0,1\right) \cup  \left(1, e^{\frac{1}{e}}\right)$}{No such $a$ exists}
+
+
+        \question{Solve for $x$, $$ 2^{x^6} + 2^{x^2} = 2^{x^4 + 1} $$}
+
+        
+
+        
+
+      \end{questions}
+\end{document}
+
+
+   
