@@ -1,7 +1,9 @@
 \documentclass[12pt,a4paper]{exam}
     \usepackage{amsmath,amsthm,amsfonts,amssymb,dsfont}
     % \usepackage{tabular}
-   
+    \DeclareMathOperator{\sgn}{sgn}
+    \newcommand*{\Comb}[2]{{}^{#1}C_{#2}}
+    \newcommand*{\Perm}[2]{{}^{#1}\!P_{#2}}
     \newcounter{matchleft}
     \newcounter{matchright}
 
@@ -95,8 +97,250 @@
     \begin{document}
     \maketitle
       \begin{questions}
+        \question{Let $f\colon R \to R$ be a function defined by $ f(x)=\frac{x^2+2x+5}{x^2+x+1} $ is}
+        \choice{one-one and into}{one-one and onto}{many-one and onto}{many-one and into}
 
+        \question{$f\colon R \to R$ is a function defined by $f(x) = \frac{e^{|x|}-e^{-x} }{e^{x}-e^{-x} }$ then $f$ is }
+        \choice{a bijection}{an injection only}{surjection only}{neither injection nor surjection}
         
+        \question{If $f\colon R \to \left[ \frac{\pi}{6}, \frac{\pi}{2} \right) $ defined by $f(x) = \sin^{-1}\left( \frac{x^2-a}{x^2+1} \right)$ is an onto function, then the set of values of $a$ is }
+        \choice{$\left(-\infty, -1\right)$}{$\left(-1, \infty \right)$}{$\left(-\infty, 0\right)$}{$\left(-\infty, \infty\right)$}
+
+        \question{Let $f\colon R \to R$ be any function. Define $g\colon R \to R$ by $g(x) = \left|f(x)\right|$ for all $x$ then $g$ is}
+        \choice{onto if $f$ is onto}{one-one if $f$ is one-one}{continuous is $f$ is continuous}{neither one-one nor onto}
+
+        \question{We have $f(x) = 
+        \begin{cases} 
+          3, & x \le 0 \\
+          3^{-x}-3^x+3, & x > 0 \\
+        \end{cases}$  \hspace{10mm} (as $ \sgn (e^{-x}=1 \forall x \in R$). }
+        \choice{one-one and into}{one-one and onto}{many-one and onto}{Neither one-one nor onto}
+
+        \question{Let $A=\left\{1,2,3,4,5\right\}$. If $f$ is a bijective function from $A$ to $A$, the  the number such functions for which $f(k) \not = k, \hspace{1mm}k=1,2,3,4,5$ is}
+        \choice{$5^5$}{120}{44}{$5^5-120$}
+        
+        \question{The set of values of $a$ for which the function $ f\colon R \to R$ given by \\ $f(x) = x^3 + (a+2) x^2 +3ax +5$ is one-one is }
+        \choice{$\left[-2,4\right]$}{$\left(1,3\right)$}{$\left(1,4\right)$}{$\left(1,5\right)$}
+
+        \question{S-I: If $f(x)=2x^3 + 7x -5$ then the value of $f^{-1}(4)$ is 1. \\ S-II: A function $y=f(x)$ is invertible if $f$ is one-one and onto.}
+        \begin{flushleft}
+          {(1) Both S-I and S-II are individually true and R is the correct explanation of A}\vspace{1mm}\break
+          \vspace{1mm}{(2) Both S-I and S-II are individually true but R is not the correct explanation of A}\break
+          \vspace{1mm}{(3) S-1 is true but S-II is false}\break
+          \vspace{1mm}{(4) S-I is false but S-II is true}
+        \end{flushleft}
+        
+        \question{The sum of solution(s) of the equation $2\left[x\right] + x = 6 \left\{x\right\}$ where $\left[x\right]$ denotes greatest integer less than or equal to $x$ and $\left\{x\right\}$ denotes fractional part of $x$ is }
+        \choice{0}{$\frac{5}{3}$}{$\frac{3}{5}$}{$\frac{8}{5}$}
+        
+        \question{If $\left[x\right]$ is the greatest integer function, then $\sum_{k=1}^{4020} \left[\frac{1}{2}+\frac{k-1}{4020}\right]$ is equal to}
+        \choice{2010}{2009}{2011}{2005}
+
+        \question{$f(x)=\sin\left[x\right] + \left[\sin x \right], 0 < x < \frac{\pi}{2}$, where $\left[\cdot \right]$ represents the greatest integer function, can also be represented as}
+        \choice{$\begin{cases}
+          0, & 0 < x < 1 \\
+          1+\sin 1, & 1 \le x < \frac{\pi}{2}
+        \end{cases}$}{$\begin{cases}
+          \frac{1}{\sqrt{2}}, & 0 < x < \frac{\pi}{4} \\
+          1+\frac{1}{2}+\frac{1}{\sqrt{2}} + \frac{\sqrt{3}}{2}, & \frac{\pi}{4} \le x < \frac{\pi}{2}
+        \end{cases}$}{$\begin{cases}
+          0, & 0 < x < 1 \\
+          \sin 1, & 1 \le x < \frac{\pi}{2}
+        \end{cases}$}{$\begin{cases}
+          0, & 0 < x < \frac{\pi}{4} \\
+          1, & \frac{\pi}{4} < x < 1 \\
+          \sin 1, & 1 \le x < \frac{\pi}{2}
+        \end{cases}$}
+
+        \question{If $\left[x\right]$ and $\left\{x\right\}$ represent the integral and fractional parts of $x$ respectively, then the value of $\sum_{r=1}^{2000} \frac{\left\{x+r\right\}}{2000}$ is }
+        \choice{$x$}{$\left[x\right]$}{$\left\{x\right\}$}{$x+2001$}
+
+        \question{Total number of solution of $2^x+3^x+4^x-5^x=0$ is}
+        \choice{0}{1}{2}{infinitely many}
+
+        \question{The of the real-valued function satisfying $f(x)+f(x+4)=f(x+2)+f(x+6)$ is }
+        \choice{10}{8}{12}{6}
+
+        \question{The period of $$\frac{\left|\sin(4x)\right| + \left|\cos(4x)\right|}{\left|\sin(4x)-\cos(4x)\right| + \left|\sin(4x)+\cos(4x)\right|}$$ is}
+        \choice{$\frac{\pi}{4}$}{$\frac{\pi}{2}$}{$\frac{\pi}{8}$}{$\pi$}
+
+        \question{If $f(x) = \cos x + \left\{x\right\}$ where $\left\{\cdot\right\}$ is fraction part function then the period of $f(x)$ is}
+        \choice{$2\pi$}{1}{$\frac{\pi}{2}$}{Does not exist}
+
+        \question{The period of $$ f(x) = \sin x + \tan \left(\frac{x}{2}\right) + \sin \left(\frac{x}{2}\right) + \tan \left(\frac{x}{2^2}\right) + \dots + \sin \left(\frac{x}{2^{n-1}}\right) + \tan \left(\frac{x}{2^n}\right) $$}
+        \choice{$2\pi$}{$2^n \pi$}{$2^n \frac{\pi}{3}$}{$3^n \pi$}
+
+        \question{Period of $f(x) = \sin \left(\left(\cos x\right) +x \right) $ is}
+        \choice{Does not exist}{$\pi$}{$\frac{\pi}{2}$}{$2\pi$}
+
+        \question{The period of the function $\left|\sin^3 \left(\frac{x}{2} \right)\right| + \left|\cos^3 \left(\frac{x}{5} \right)\right| $ is}
+        \choice{$2\pi$}{$10\pi$}{$8\pi$}{$5\pi$}
+
+        \question{Let $f\colon R \to R -\left\{3\right\}$ be a function such that for some $p>0$,\\ $f(x+p)=\frac{f(x)-5}{f(x)-3} \hspace{4mm}\forall x \in R$. Then, period of $f$ is}
+        \choice{$2p$}{$3p$}{$4p$}{$5p$}
+
+        \question{Let $f(x)$ be a real valued function with domain $R$ such that $$f(x+p) = 1 + \left[2-3f(x)+3(f(x))^2-(f(x))^3\right]^{\frac{1}{3}}$$ holds good $\forall x \in R$ and for some +ve constant $p$ then the period of $f(x)$ is}
+        \choice{$\frac{p}{2}$}{$p$}{$2p$}{$\frac{p}{3}$}
+
+        \question{If $f(a-x)=f(a+x)$ and $f(b-x) = f(b+x) \hspace{2mm} \forall x\in R$ where $a,b (a>b)$ are constants then the period of $f(x)$ is}
+        \choice{$2a$}{$2\left|a-b\right|$}{$3a$}{$b$}
+
+        \question{The period of $f(x)=\left[x\right]+\left[2x\right] + \left[3x\right] + \left[4x\right] + \dots + \left[nx\right] - \frac{n(n+1)}{2}x$ (where $n\in N$ is }
+        \choice{$n$}{1}{$\frac{1}{n}$}{5}
+
+        \question{If $f(2+x)=a+  \left[1-\left(f(x)-a\right)^4 \right]^{\frac{1}{4}} \hspace{2mm}\forall x \in R$, then $f(x)$ is periodic with period}
+        \choice{1}{2}{4}{8}
+
+        \question{If $f \colon \left[-4,4\right]-\left\{-\pi,0,\pi\right\} \to R $, such that $f(x) = \cot (\sin x) + \left[ \frac{x^2}{\left| a \right|}\right] + \frac{\sin 2x}{x^2}$, ($\left[\cdot\right]$ denotes greatest integer function) is an odd function, then the complete set of values of $a$ is}
+        \choice{$\left(-\infty, -4\right] \cup \left[4, \infty \right)$}{$\left(-\infty, -16\right) \cup \left(16, \infty\right)$}{$\left[-16, 16\right]$}{$\left(-\infty, -16\right] \cup \left[16, \infty\right)$}
+
+        \question{S-I: If $f(x)$ is a odd function and $g(x)$ is even function then $f(x)+g(x)$ is neither even nor odd. \\ S-II: Odd function is symmetrical in opposite quadrants and even function is symmetrical about the y-axis.}
+        \begin{flushleft}
+          {(1) Both S-I and S-II are individually true and R is the correct explanation of A}\vspace{1mm}\break
+          \vspace{1mm}{(2) Both S-I and S-II are individually true but R is not the correct explanation of A}\break
+          \vspace{1mm}{(3) S-1 is true but S-II is false}\break
+          \vspace{1mm}{(4) S-I is false but S-II is true}
+        \end{flushleft}
+        
+        \question{If $f(x) = \begin{cases}
+          1+x; & 0 \le x \le 2 \\
+          3-x; & 2 < x \le 3
+        \end{cases}$ \hspace{4mm} then $(f\circ f)(x) =$}
+        \choice{$\begin{cases}
+          1-x;& 0 \le x \le 2 \\
+          3+x;& 2 < x \le 3 \\
+        \end{cases}$}{$\begin{cases}
+          2+x;& 0 \le x \le 2 \\
+          2-x;& 2 < x \le 3 \\
+          4-x;& 2 < x \le 3
+        \end{cases}$}{$\begin{cases}
+          2+x;& 0 \le x \le 1 \\
+          2-x;& 1 < x \le 2 \\
+          4-x;& 2 < x \le 3 \\
+        \end{cases}$}
+        {does not exist}
+
+        \question{If for $x>0, f(x) = \left(a-x^n\right)^{\frac{1}{n}}$; $g(x)=x^2 + px +q; \hspace{2mm} p,q\in R$ and the equation $g(x)-x = 0$ has imaginary roots then the number of real roots of the equation $g(g(x))-f(f(x))=0$}
+        \choice{0}{2}{4}{$n$}
+
+        \question{S-I: If $f(x) = \frac{x+1}{x-1}$ then $(f \circ f \circ f \circ f \circ f)(x) = f(x)$ \\\\  S-II: $(f \circ f)(x)=x$ }
+        \begin{flushleft}
+          {(1) Both S-I and S-II are individually true and R is the correct explanation of A}\vspace{1mm}\break
+          \vspace{1mm}{(2) Both S-I and S-II are individually true but R is not the correct explanation of A}\break
+          \vspace{1mm}{(3) S-1 is true but S-II is false}\break
+          \vspace{1mm}{(4) S-I is false but S-II is true}
+        \end{flushleft}
+
+        \question{The domain of $f(x)=\frac{1}{x} + 2^{sin^{-1}x} + \frac{1}{\sqrt{x-2}}$ is}
+        \choice{$\left(0, \infty\right)$}{$\left(-\infty, 0\right)$}{$\left(1,3\right)$}{$\phi$}
+
+        \question{The domain of $f(x) = \sqrt{\ln_{(|x|-1)} (x^2 + 4x+ 4)}$ is}
+        \choice{$\left[-3,-1\right] \cup \left[1,2\right]$}{$\left(-2,-1\right) \cup \left[2, \infty\right]$}{$\left(-\infty, -3\right) \cup \left(-2,-1\right) \cup \left(2, \infty\right)$}{$\left(-\infty, \infty\right)$}
+
+        \question{The domain of $f(x)= \sqrt{\frac{\log_{0.3}\left|x-2\right|}{\left|x\right|}}$ is}
+        \choice{$\left[1,2\right]$}{$\left[2,3\right]$}{$\left[1,2\right) \cup \left(2,3\right]$}{$\left[0,3\right]$}
+
+        \question{The domain of $f(x) = \log_{10}\log_{10}\log_{10} \dots \log_{10}x$ ($\log$ n times) is}
+        \choice{$\left(10^{10^{10^{\cdot^{\cdot^{(n-2) \text{ times}}}}}}, \infty\right)$}{$\left(10^{n-2}, \infty\right)$}{$\left(10^{10^{10^{\cdot^{\cdot^{(n-1) \text{ times}}}}}}, \infty\right)$}{$\left(10^{10^{10^{\cdot^{\cdot^{(n-3) \text{ times}}}}}}, \infty\right)$}
+
+        \question{The domain of the function $f(x)=\sin^{-1} \left(\frac{4}{3+2\cos x}\right)$ is}
+        \choice{$\left[2n\pi - \frac{\pi}{3}, 2n\pi + \frac{\pi}{3}\right]$}
+        {$\left[2n\pi - \frac{\pi}{6}, 2n\pi + \frac{\pi}{6}\right]$}
+        {$\left[2n\pi - \frac{\pi}{2}, 2n\pi + \frac{\pi}{2}\right]$}
+        {$\left[2n\pi - \frac{\pi}{3}, 2n\pi + \frac{\pi}{2}\right]$}
+
+        \question{The domain of $f(x) = \sin^{-1}\left[2-4x^2\right]$ (where $\left[\cdot\right]$ is G.I.F.) is}
+        \choice{$\left[-\frac{\sqrt{3}}{2},\frac{\sqrt{3}}{2}\right]$}{$\left[-\frac{3}{2}, \frac{3}{2}\right] - \left\{0\right\}$}{$\left[-\frac{\sqrt{3}}{2}, 0 \right) \cup \left(0, \frac{\sqrt{3}}{2} \right]$}{$\phi$}
+
+        \question{The domain of $f(x)= \sqrt{\cos(\sin x)} + \sqrt{\log_x\left\{x\right\}}$ (where $\left\{\cdot\right\}$ is fractional part of x) is}
+        \choice{$\left[1,\pi\right)$}{$\left(0, 2\pi\right)-\left[1,\pi\right)$}{$\left(0, \frac{\pi}{2}\right)-\left\{1\right\}$}{$\left(0,1\right)$}
+
+        \question{The domain of $$\frac{\left[\cos^{-1}(x^4)\right] + \left|\left[x-2\tan^{-1}x\right]\right| + \sqrt{\sin(\ln x)}}{\left\{3x^2-7\right\}+ a^{\sqrt{\sin x + 3\cos x}}+ \ln \cos\left(\frac{1}{\sqrt{-x^2}}\right)}$$ (where $\left[\cdot\right]$ is G.I.F. and $\left\{\cdot\right\}$ is fractional part function) is}
+        \choice{$\left(-2, \sqrt{2}\right)$}{$\left(0,1\right)$}{$\left(-1,1\right)$}{$\phi$}
+        
+        \question{The domain of $f(x)=\sin^{-1}\left(\left[2-3x^2\right]\right)$ (where $\left[\cdot\right]$ is G.I.F.) is}
+        \choice{$\left[-1,1\right]$}{$\left(0,1\right)$}{$\left[-1,1\right]-\left\{0\right\}$}{$\phi$}
+
+        \question{The domain of the function $$f(x)=\left[9^x + 27^{\frac{2}{3}(x-2)}-219-3^{2(x-1)}\right]^\frac{1}{4}$$ }
+        \choice{$\left[-3,3\right]$}{$\left[3, \infty\right)$}{$\left[\frac{5}{2}, \infty\right)$}{$\left[0,1\right]$}
+
+        \question{If $f(x) = 2x + |x|$, $g(x)=\frac{1}{3}\left(2x-\left|x\right|\right)$ and $h(x)=f(g(x))$ then the domain of $\sin^{-1}\left(h\left(h\left(h\dots h\left(x\right) \right)\right)\right)$ is ($h$ is being repeated $n$ times)}
+        \choice{$\left[-1,1\right]$}{$\left(0,1\right)$}{$\left(-1,1\right)$}{$\left[\frac{1}{2}, 1\right]$}
+
+        \setcounter{question}{41} % Counter Increment
+        \question{The range of $\tan(\log x)$}
+        \choice{$\left(0, \infty\right)$}{$\left(1, \infty\right)$}{$\left(e, \infty\right)$}{$\left(-\infty, \infty\right)$}
+
+        \question{The range of $f(x)=\frac{e^{-x}}{1+\left[x\right]}$ is (where $\left[\cdot\right]$ is G.I.F.)}
+        \choice{$R$}{$R-\left\{0\right\}$}{$R-\left[-1,0\right)$}{$\left[0, \infty\right)$}
+
+        \question{The range of $f(x)=\frac{1}{\left|\sin x\right|} + \frac{1}{\left|\cos x\right|}$ is}
+        \choice{$\left[2\sqrt{2}, \infty\right)$}{$\left(\sqrt{2}, 2\sqrt{2}\right)$}{$\left(0, 2\sqrt{2}\right)$}{$\left(2\sqrt{2}, 4\right)$}
+
+        \question{The range of $f(x) = \frac{x-\left[x\right]}{1-\left[x\right]+x}$ (where $\left[\cdot\right]$ is G.I.F.) is}
+        \choice{$\left[0, \frac{1}{2}\right]$}{$\left[0,1\right]$}{$\left(0, \frac{1}{2}\right]$}{$\left[0, \frac{1}{2}\right)$}
+
+        \question{Let $A=\left\{x \colon 0\le x < \frac{\pi}{2} \right\}$ and $f\colon R \to A$ is an onto function given by \\\\ $f(x)= \tan^{-1}(x^2+x+\lambda)$ where}
+        \choice{$\lambda > 0$}{$\lambda \le \frac{1}{4}$}{$\lambda = \frac{1}{4}$}{$\lambda \ge \frac{1}{8}$}
+
+        \question{$f(x)=\left|x-1\right|$, $f\colon R^+ \to R$ and $g(x)=e^x$, $g\colon \left[-1, \infty\right) \to R$ if the function $f \circ g (x)$ is defined, then its domain and range respectively are}
+        \choice{$ \left(0, \infty \right)$ \& $\left[0,\infty\right)$}{$\left[-1. \infty\right)$ \& $\left[0, \infty\right)$}{$\left[-1, \infty\right)$ \& $\left[ 1-\frac{1}{e}, \infty\right)$}{$\left[-1, \infty\right)$ \& $\left[\frac{1}{e}-1, \infty\right)$}
+
+        \question{The range of $f(x)= \left[\frac{1}{\sin \left\{x\right\}}\right]$ is (where $\left\{\cdot\right\}$ is fraction part and $\left[\cdot\right]$ is G.I.F.)}
+        \choice{$\left\{1,-1\right\}$}{$\left\{0\right\}$}{$N$}{$Z$}
+
+        \question{If \(f(x)=\pi\left(\frac{\sqrt{x+7}-4}{x-9}\right)\), then range of function \(y = \sin{(2f(x))}\) is}
+        \choice {$\left[0, 1\right]$}{$\left(0,\frac{1}{\sqrt{2}}\right]$}{$\left(0,\frac{1}{\sqrt{2}}\right) \cup \left(\frac{1}{\sqrt{2}}, 1\right]$}{$\left(0, 1\right]$}
+        
+        \question{The range of $f(x)=\sqrt{a-x}+\sqrt{x-b}$ is (where $a>b>0$)}
+        \choice{$\left[\sqrt{a-b}, \sqrt{2(a-b)}\right]$}
+        {$\left[\sqrt{a-b}, \sqrt{a+b}\right]$}
+        {$\left[a,b\right]$}
+        {$\left(a,b\right)$}
+
+        \question{The range of $f(x)=\cot^{-1}(3x-x^2)$ is}
+        \choice{$(0,\pi)$}{$\left(\frac{\pi}{4}, \pi\right)$}{$\left(\frac{\pi}{4}, \pi\right]$}{$\left[\frac{\pi}{4}, \pi\right)$}
+
+        \question{The sum of the maxiumum and minimum values of $$ f(x)=\sin^{-1}(2x)+\cos^{-1}(2x)+ \sec^{-1}(2x) $$ is}
+        \choice{$\pi$}{$\frac{\pi}{2}$}{$2\pi$}{$\frac{3\pi}{2}$}
+
+        \question{If $f(x)=\log_{[x-1]}\left(\frac{\left|x\right|}{x}\right)$, (where $\left[\cdot\right]$ is G.I.F.) then domain and range are}
+        \choice{$(2, \infty)$, $(0,1)$}{$[3, \infty], \{0\}$}{$[3, \infty]$, $\{0,1\}$}{$(-\infty, \infty)$, $\{0\}$}
+
+        \question{If $f(x)=x^3+3x^2+4x+a\sin x + b\cos x \hspace{2mm}\forall x\in R$ is an injection then the greatest value of $a^2+b^2$ is}
+        \choice{1}{2}{$\sqrt{2}$}{$2\sqrt{2}$}
+
+        \question{The domain and range of $f(x) = \sin\left\{\log\left(\frac{\sqrt{4-x^2}}{1-x}\right) \right\}$ are}
+        \choice{$(-2, 1)$ \& $[-1,1]$}{$(1,3)$ \& $[-1,1]$  \hspace{5mm}}{$[-2,1]$ \& $[-1,1]$}{$(0,\infty)$ \& $[-1,1]$}
+
+        \question{Consider the real valued function satisfying $2f(\sin x)+ f(\cos x) = x$, then $f\left(\frac{1}{2}\right)=$}
+        \choice{1}{2}{0}{4}
+
+        \question{If $f\colon R \to R$ such that $f\left(x-f(y)\right) = f\left(f(y)\right) + xf(x)+f(x)-1 \hspace{2mm} \forall x,y \in R$n then $f(x)$ is }
+        \choice
+        {$1 + \frac{x^2}{4}$}
+        {$1 - \frac{x^2}{2}$}
+        {$1 + \frac{x^2}{2}$}
+        {$1 - \frac{x^2}{4}$}
+
+        \question{A function $f$ well defined $\forall x,y \in R$ is such that $f(1)=2, f(2)=8$ and $f(x+y)-kxy=f(x)+2y^2$, where $k$ is some constant then $f(x)$ is}
+        \choice{$x^2$}{$3x^2$}{$2x^2$}{$4x^2$}
+
+        \question{If $f$ is a polynomial function satisfying $2+f(x)f(y) = f(x) + f(y) + f(xy) \forall x,y \in R$ and if $f(2)=5$ then the value of $f\left(f(2)\right) = $ \hspace{20mm}($f(1) \not = 1$)}
+        \choice{25}{16}{26}{14}
+
+        \question{If $f$ is a function such that $f(0)=2; f(1)=3$ and $f(x+2)=2f(x)-f(x+1) \hspace{2mm}\forall x\in R$ then $f(5)=$}
+        \choice{7}{13}{1}{5}
+
+        \question{If $f(x)=\left(-1\right)^{\left[\frac{2x}{\pi}\right]}$, $g(x)=\left|\sin x\right|- \left|\cos x\right|$, and $\phi(x) = f(x)g(x)$ (where $\left[\cdot\right]$ denotes the greatest integer function), then the respective fundamental periods of $f(x)$, $g(x)$ and $\phi(x)$ are}
+        \choice{$\pi,\pi,\pi$}{$\pi,2\pi,\pi$}{$\pi,\pi,\frac{\pi}{2}$}{$\pi,\frac{\pi}{2},\pi$}
+
+        \question{The domain of the function $f(x)=\frac{1}{\sqrt{\Comb{10}{x-1}-3 \times \Comb{10}{x}}}$ contains the points}
+        \choice{9, 10, 11}{9, 10, 12}{all natural numbers}{none of these}
+
+        \question{The range of $f(x)=(x+1)(x+2)(x+3)(x+4) + 5$ for $x \in [-6, 6]$ is }
+        \choice{$[4, 5045]$}{$[0,5045]$}{$[-20, 5045]$}{none of these}
+
       \end{questions}
 \end{document}
 
