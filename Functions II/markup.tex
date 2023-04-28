@@ -1,0 +1,104 @@
+\documentclass[12pt,a4paper]{exam}
+    \usepackage{amsmath,amsthm,amsfonts,amssymb,dsfont}
+    % \usepackage{tabular}
+   
+    \newcounter{matchleft}
+    \newcounter{matchright}
+
+    \newenvironment{matchtabular}{%
+        \setcounter{matchleft}{0}%
+        \setcounter{matchright}{0}%
+        \tabularx{\textwidth}{%
+            >{\leavevmode\hbox to 1.5em{\stepcounter{matchleft}\arabic{matchleft}.}}X%
+            >{\leavevmode\hbox to 1.5em{\stepcounter{matchright}\alph{matchright})}}X%
+            }%
+    }
+
+    \setlength\parindent{0pt}
+        %usage \choice{ }{ }{ }{ }
+        %(A)(B)(C)(D)
+        \newcommand{\fourch}[4]{
+        \par
+                \begin{tabular}{*{4}{@{}p{0.23\textwidth}}}
+                (1)~#1 & (2)~#2 & (3)~#3 & (4)~#4
+                \end{tabular}
+        }
+
+        %(A)(B)
+        %(C)(D)
+        \newcommand{\twoch}[4]{
+
+                \begin{tabular}{*{2}{@{}p{0.46\textwidth}}}
+                (1)~#1 & (2)~#2
+                \end{tabular}
+        \par
+                \begin{tabular}{*{2}{@{}p{0.46\textwidth}}}
+                (3)~#3 & (4)~#4
+                \end{tabular}
+        }
+
+        %(A)
+        %(B)
+        %(C)
+        %(D)
+        \newcommand{\onech}[4]{
+          \begin{tabular}{*{1}{@{}p{0.46\textwidth}}}
+          (1)~#1 &
+          \end{tabular}
+          \begin{tabular}{*{1}{@{}p{0.46\textwidth}}}
+          (2)~#2 &
+          \end{tabular}
+          \begin{tabular}{*{1}{@{}p{0.46\textwidth}}}
+          (3)~#3 &
+          \end{tabular}
+          \begin{tabular}{*{1}{@{}p{0.46\textwidth}}}
+          (4)~#4 &
+          \end{tabular}
+        }
+
+        \newlength\widthcha
+        \newlength\widthchb
+        \newlength\widthchc
+        \newlength\widthchd
+        \newlength\widthch
+        \newlength\tabmaxwidth
+
+        \setlength\tabmaxwidth{0.96\textwidth}
+        \newlength\fourthtabwidth
+        \setlength\fourthtabwidth{0.25\textwidth}
+        \newlength\halftabwidth
+        \setlength\halftabwidth{0.5\textwidth}
+
+      \newcommand{\choice}[4]{%
+      \settowidth\widthcha{AM.#1}\setlength{\widthch}{\widthcha}%
+      \settowidth\widthchb{BM.#2}%
+      \ifdim\widthch<\widthchb\relax\setlength{\widthch}{\widthchb}\fi%
+      \settowidth\widthchb{CM.#3}%
+      \ifdim\widthch<\widthchb\relax\setlength{\widthch}{\widthchb}\fi%
+      \settowidth\widthchb{DM.#4}%
+      \ifdim\widthch<\widthchb\relax\setlength{\widthch}{\widthchb}\fi%
+      \ifdim\widthch<\fourthtabwidth
+        \fourch{#1}{#2}{#3}{#4}
+      \else\ifdim\widthch<\halftabwidth
+        \ifdim\widthch>\fourthtabwidth
+          \twoch{#1}{#2}{#3}{#4}
+        \else
+          \onech{#1}{#2}{#3}{#4}
+        \fi
+      \fi\fi
+    }
+                
+    
+    \title{\vspace{-4em}Functions II Assignment}
+    \date{\vspace{-3em}}
+    \everymath{\displaystyle}
+    \begin{document}
+    \maketitle
+      \begin{questions}
+
+        
+      \end{questions}
+\end{document}
+
+
+   
